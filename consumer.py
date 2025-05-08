@@ -30,9 +30,7 @@ def fetch_schema_and_encoding(project_id: str, subscription_id: str):
 
     # 3) Fetch full schema definition
     schema_client = SchemaServiceClient()
-    req = GetSchemaRequest(
-        name=schema_name,
-        view=SchemaView.FULL
+    req = GetSchemaRequest(name=schema_name,view=SchemaView.FULL
     )
     schema_obj  = schema_client.get_schema(request=req)
     avro_schema = avro.schema.parse(schema_obj.definition)

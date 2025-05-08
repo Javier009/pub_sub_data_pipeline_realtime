@@ -73,6 +73,7 @@ def main():
             data = json.dumps(rec).encode('utf-8')            
         else:
             raise RuntimeError('Unsupported input data formats')
+        
         # Send Message to Pub/Sub Topic
         msg = PubsubMessage(data=data)
         req = PublishRequest(topic=topic_path, messages=[msg])
