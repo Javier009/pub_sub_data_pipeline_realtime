@@ -1,0 +1,57 @@
+{
+    "type": "record",
+    "name": "OrderRecord",
+    "namespace": "com.order",
+    "fields": [
+      {
+        "name": "order_id",
+        "type": "string"
+      },
+      {
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "name": "user_id",
+        "type": "string"
+      },
+      {
+        "name": "item_id",
+        "type": "string"
+      },
+      {
+        "name": "item_category",
+        "type": "string"
+      },
+      {
+        "name": "purchase_date",
+        "type": "string"
+      },
+      {
+        "name": "price",
+        "type": "float"
+      },
+      {
+        "name": "currency",
+        "type": "string"
+      },
+      {
+        "name": "discount",
+        "type": "float"
+      },
+      {
+        "name": "status",
+        "type": {
+          "type": "enum",
+          "name": "BookingStatus",
+          "symbols": [
+            "CONFIRMED",
+            "CANCELLED",
+            "PENDING",
+            "SENT",
+            "DELIVERED"
+          ]
+        }
+      }
+    ]
+  }
