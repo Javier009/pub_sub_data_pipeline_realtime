@@ -35,7 +35,6 @@ avro_schema  = avro.schema.parse(schema_obj.definition)
 @functions_framework.cloud_event
 def main(cloud_event):
     data = base64.b64decode(cloud_event.data["message"]["data"])
-    print(data)
     bout = io.BytesIO(data)
     decoder = BinaryDecoder(bout)
     reader = DatumReader(avro_schema)
@@ -45,4 +44,5 @@ def main(cloud_event):
     decoded_data['final_price'] = decoded_data['price'] * (1-decoded_data['discount'])
     # Simulate sending data to GCS
     print('Sending data to GCS')
+    print(decoded_data)
     return "OK", 200
