@@ -33,7 +33,7 @@ avro_schema  = avro.schema.parse(schema_obj.definition)
 
 # Triggered from a message on a Cloud Pub/Sub topic.
 @functions_framework.cloud_event
-def hello_pubsub(cloud_event):
+def main(cloud_event):
     data = base64.b64decode(cloud_event.data["message"]["data"])
     print(data)
     bout = io.BytesIO(data)
